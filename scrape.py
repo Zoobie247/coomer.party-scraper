@@ -167,9 +167,9 @@ def su_base_from_url(url):
     parts = urlsplit(url if re.match(r'^https?://', url) else f'https://{url}')
     host = parts.netloc or ''
     host = host[4:] if host.startswith('www.') else host
-    labels = host.split('.') if host else []
-    sld = labels[-2] if len(labels) >= 2 else (labels[0] if labels else 'coomer')
-    return f'https://www.{sld}.su'
+    #labels = host.split('.') if host else []
+    #sld = labels[-2] if len(labels) >= 2 else (labels[0] if labels else 'coomer')
+    return f'https://{host}'
 
 
 """
