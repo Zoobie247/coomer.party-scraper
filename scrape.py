@@ -37,7 +37,7 @@ class CoomerThread(DownloadThread):
         name = self.base.split('/')[-1].split('.')[0]
         t1 = name[0:2]
         t2 = name[2:4]
-        self.url = f'http://{self.SERVER_IDENT}{self.server}.{host}.su/data/{t1}/{t2}/{name}.{ext}?f={self.F_TOKEN}.{ext}'
+        self.url = f'http://{self.SERVER_IDENT}{self.server}.coomer.st/data/{t1}/{t2}/{name}.{ext}?f={self.F_TOKEN}.{ext}'
         self.server = self.server + 1
         if(self.server > self.C_SERVER_COUNT): self.server = 1
 
@@ -167,8 +167,6 @@ def su_base_from_url(url):
     parts = urlsplit(url if re.match(r'^https?://', url) else f'https://{url}')
     host = parts.netloc or ''
     host = host[4:] if host.startswith('www.') else host
-    #labels = host.split('.') if host else []
-    #sld = labels[-2] if len(labels) >= 2 else (labels[0] if labels else 'coomer')
     return f'https://{host}'
 
 
